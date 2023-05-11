@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div>
+    <h3>
+      {{ title }}
+    </h3>
+    <!-- <a href="https://github.com/NileshPatel17/ng-multiselect-dropdown"
+      >Github Code</a
+    > -->
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ng-multiselect-dropdown
+          name="city"
+          [placeholder]="'Select City'"
+          [data]="cities"
+          [(ngModel)]="selectedItems"
+          [disabled]="disabled"
+          [settings]="dropdownSettings"
+          (onSelect)="onItemSelect($event)"
+        >
+          <ng-template
+            #optionsTemplate
+            let-item
+            let-option="option"
+            let-id="id"
+            let-isSelected="isSelected"
+          >
+            <div style="padding: 1px 10px;">
+              <span
+                style="display: block; margin-left: 30px;"
+                [ngStyle]="{ 'background': isSelected ? 'lightgrey':''}"
+              >
+                {{option}}
+              </span>
+            </div>
+          </ng-template>
+        </ng-multiselect-dropdown>
+      </div>
+    </div>
+  </div>
+</div>
